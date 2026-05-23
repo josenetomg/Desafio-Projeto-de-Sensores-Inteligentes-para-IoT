@@ -1,4 +1,9 @@
-# Desafio IoT: Evolução da Detecção de Objetos e TinyML
+# Desafio IoT: Projeto de Sensores Inteligentes para IoT
+## Evolução da Detecção de Objetos e TinyML
+
+Este desafio apresentou mais dois desafios a url citada não mais existe e o doc de descrição também não abre, ai restou apresentar o trabalho de outra forma.
+O assunto e interessantissimo e a evolução no mesmo é contínua. 
+Então resolvemos mudar um pouco a exposição e nos aprofundar com uma pesquisa sobre o que a de "novo" sobre este assunto.
 
 Este projeto documenta a rápida transição da detecção de objetos de sistemas complexos baseados em PC para soluções de **TinyML** (Machine Learning em microcontroladores) que podem ser treinadas no navegador e executadas em um **Arduino Nano 33 BLE**.
 
@@ -22,7 +27,7 @@ Para resolver o desafio de classificar o estado de uma fruta (ex: **Banana Madur
 4.  **Exportação:** O modelo é convertido para **TensorFlow Lite para Microcontroladores** e baixado como um sketch pronto para o Arduino.
 
 > **[INFOGRÁFICO: FLUXO DE IA EM MICROCONTROLADORES]**
-> *(Aqui deve ser inserido o infográfico gerado na aba Studio, ilustrando os 6 passos: Hardware -> Software -> Coleta -> Treinamento -> Exportação -> Monitoramento)*
+>
 
 ## 3. Configuração de Hardware e Software
 
