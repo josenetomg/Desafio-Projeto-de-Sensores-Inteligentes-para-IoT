@@ -1,7 +1,3 @@
-Aqui está o conteúdo estruturado para o seu arquivo `consideracoes.md`, consolidando as observações dos guias e relatórios gerados para o desafio de IoT.
-
----
-
 # Considerações Técnicas: A Revolução do TinyML e Detecção de Objetos
 
 Este documento reúne as principais observações sobre a implementação de soluções de inteligência artificial em microcontroladores, destacando a transição de modelos complexos para o fluxo simplificado do **TinyML**.
