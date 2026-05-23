@@ -15,6 +15,8 @@ Então resolvemos mudar um pouco a exposição e nos aprofundar com uma pesquisa
 
 Este projeto documenta a rápida transição da detecção de objetos de sistemas complexos baseados em PC para soluções de **TinyML** (Machine Learning em microcontroladores) que podem ser treinadas no navegador e executadas em um **Arduino Nano 33 BLE**.
 
+Tem também no repositoriao algumas [consideraçoes] (https://github.com/josenetomg/consideraçoes.md) importantes.
+
 ## 1. A Evolução Tecnológica: Da Complexidade à Simplicidade
 
 Até recentemente, implementar a detecção de objetos era um processo altamente técnico que exigia um sólido domínio de matemática aplicada e milhares de linhas de código. Sistemas baseados na biblioteca **ImageAI** permitiram simplificar essa tarefa, mas ainda dependiam de ambientes robustos:
