@@ -2,17 +2,28 @@
 ## Evolução da Detecção de Objetos e TinyML
 
 Este desafio apresentou mais dois desafios a url citada não mais existe e o doc de descrição também não abre, ai restou apresentar o trabalho de outra forma.
-O assunto e interessantissimo e a evolução no mesmo é contínua. 
-Então resolvemos mudar um pouco a exposição e nos aprofundar com uma pesquisa sobre o que a de "novo" sobre este assunto.
-
 O modelo **YOLOv3** mencionado nas fontes foi treinado para detectar e reconhecer um total de **80 objetos diferentes**.
-
 Embora as fontes não apresentem a lista completa e detalhada dos 80 itens, elas fornecem algumas informações contextuais sobre seu uso:
 
 *   **Detecção em Tráfego:** O modelo é demonstrado em um vídeo de exemplo chamado "traffic-mini.mp4", sugerindo sua capacidade de reconhecer elementos comuns em vias públicas.
 *   **Aplicações Gerais:** Ele é utilizado para detectar, localizar e reconhecer objetos visualmente observáveis em imagens, vídeos e transmissões de câmeras em tempo real (como webcams ou câmeras IP).
 *   **Resultados Visuais:** Quando o modelo é executado, ele gera caixas delimitadoras ao redor dos objetos detectados, exibindo o **nome do objeto** e a **probabilidade de reconhecimento** em porcentagem.
+   
+O assunto e interessantissimo e a evolução no mesmo é contínua. O YOLO agora esta na versao 11.
 
+Então resolvemos mudar um pouco a exposição e nos aprofundar com uma pesquisa sobre o que a de "novo" sobre este assunto.
+
+Este projeto documenta a rápida transição da detecção de objetos de sistemas complexos baseados em PC para soluções de **TinyML** (Machine Learning em microcontroladores) que podem ser treinadas no navegador e executadas em um **Arduino Nano 33 BLE**.
+
+## 1. A Evolução Tecnológica: Da Complexidade à Simplicidade
+
+Até recentemente, implementar a detecção de objetos era um processo altamente técnico que exigia um sólido domínio de matemática aplicada e milhares de linhas de código. Sistemas baseados na biblioteca **ImageAI** permitiram simplificar essa tarefa, mas ainda dependiam de ambientes robustos:
+
+*   **Requisitos Tradicionais:** Python 3.5.1+, TensorFlow, OpenCV, Keras e bibliotecas de suporte como Numpy e SciPy.
+*   **Algoritmos Pesados:** Uso de modelos como **YOLOv3** (capaz de reconhecer 80 objetos diferentes) ou **RetinaNet**, que muitas vezes exigiam GPUs potentes para processamento em tempo real.
+*   **Resultados:** A detecção era exibida com caixas delimitadoras e probabilidades em porcentagem em vídeos ou câmeras IP.
+
+**Hoje**, ferramentas como o **Teachable Machine** permitem que qualquer pessoa treine modelos diretamente no navegador sem precisar programar, exportando versões reduzidas para microcontroladores.
 Para casos onde se deseja reconhecer objetos específicos que não fazem parte desses 80 originais (como os exemplos de "Ficus Lyatra", "Peace Lilly" ou maturação de bananas citados anteriormente), as fontes sugerem o uso de ferramentas como o **Teachable Machine**, que permitem treinar modelos personalizados.
 
 Você pode encontrar os links para baixar o **TMUploader** e o **TMConnector** diretamente na interface do site **Teachable Machine**, ao iniciar um novo projeto de "Modelo incorporado" (Embedded Model).
@@ -37,19 +48,6 @@ Para exportar o seu modelo treinado do Teachable Machine para o Arduino, siga es
 6.  **Verifique os resultados:** Após o carregamento, abra o **Monitor Serial** na IDE do Arduino. Você verá os nomes das classes que você criou (ex: "Banana Madura") sendo impressos junto com o nível de confiança da detecção.
 
 **Observação:** Os níveis de confiança no monitor serial variam de **-128 a 127**. Se os resultados não forem os esperados, as fontes sugerem coletar mais amostras ou testar diferentes abordagens nos exemplos de treinamento.
-
-
-Este projeto documenta a rápida transição da detecção de objetos de sistemas complexos baseados em PC para soluções de **TinyML** (Machine Learning em microcontroladores) que podem ser treinadas no navegador e executadas em um **Arduino Nano 33 BLE**.
-
-## 1. A Evolução Tecnológica: Da Complexidade à Simplicidade
-
-Até recentemente, implementar a detecção de objetos era um processo altamente técnico que exigia um sólido domínio de matemática aplicada e milhares de linhas de código. Sistemas baseados na biblioteca **ImageAI** permitiram simplificar essa tarefa, mas ainda dependiam de ambientes robustos:
-
-*   **Requisitos Tradicionais:** Python 3.5.1+, TensorFlow, OpenCV, Keras e bibliotecas de suporte como Numpy e SciPy.
-*   **Algoritmos Pesados:** Uso de modelos como **YOLOv3** (capaz de reconhecer 80 objetos diferentes) ou **RetinaNet**, que muitas vezes exigiam GPUs potentes para processamento em tempo real.
-*   **Resultados:** A detecção era exibida com caixas delimitadoras e probabilidades em porcentagem em vídeos ou câmeras IP.
-
-**Hoje**, ferramentas como o **Teachable Machine** permitem que qualquer pessoa treine modelos diretamente no navegador sem precisar programar, exportando versões reduzidas para microcontroladores.
 
 ## 2. Fluxo de Trabalho Moderna (Exemplo: Banana Madura)
 
@@ -95,10 +93,6 @@ Após carregar o modelo final no Arduino, os resultados de confiança (variando 
 | ![Amostras de Treinamento](train_data.png) | ![Sketches de Conexão](sketches.png) | ![Monitor Serial](serial_mon.png) |
 | *Interface de treinamento do modelo.* | *Preparação para envio de dados.* | *Confiança da detecção em tempo real.* |
 
----
-Aqui está a atualização para o seu arquivo `readme.md`, incluindo os links de vídeo solicitados e um mini-tutorial focado no **Teachable Machine** com o exemplo prático de classificação de bananas.
-
----
 
 ## 5. Resultados em Vídeo
 
@@ -233,13 +227,6 @@ Aqui está o passo a passo detalhado:
 
 Além dessas bibliotecas, certifique-se de que o suporte para a placa **Arduino Nano 33 BLE** esteja instalado em **Ferramentas** -> **Placas** para que você possa carregar os sketches necessários, como o **TMUploader**, que prepara o dispositivo para enviar imagens para o Teachable Machine.
 
-
-
-
-
-
-
-
 ## 7. Referências e Materiais de Apoio
 
 *   **Tutorial de Início Rápido:** [Getting Started with Embedded TM](https://github.com/googlecreativelab/teachablemachine-community/blob/master/snippets/markdown/tiny_image/GettingStarted.md).
@@ -247,5 +234,5 @@ Além dessas bibliotecas, certifique-se de que o suporte para a placa **Arduino 
 *   **Bibliotecas Necessárias (Arduino IDE):** `Arduino_TensorFlowLite` (v2.4.0-ALPHA) e `Arduino_OV767X`.
 *   **Bibliotecas de Comunicação (Processing):** `ControlP5` e `Websockets`.
 
-
+---
 *Este documento foi criado para fins educativos, demonstrando a facilidade das tecnologias modernas de IA incorporada.*
